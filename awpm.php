@@ -8,7 +8,7 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://chuev.com
+ * @link              https://chuev.online
  * @since             1.0.0
  * @package           Awpm
  *
