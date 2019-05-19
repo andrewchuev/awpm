@@ -100,15 +100,8 @@ class Awpm_Public {
 
 	}
 
-
-	/**
-	 * Register the plugin shortcodes.
-	 *
-	 * @since    1.0.0
-	 */
-	public function register_shortcodes() {
-		add_shortcode( 'projects', array( $this, 'shortcode_function') );
-		add_shortcode( 'anothershortcode', array( $this, 'another_shortcode_function') );
+	public function projects_list() {
+		echo "Project list!";
 	}
 
 }

@@ -157,6 +157,8 @@ class Awpm {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		//$this->loader->add_shortcode( 'projects_list', $plugin_admin, 'projects_list' );
+
 	}
 
 	/**
@@ -173,6 +175,8 @@ class Awpm {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 		$this->loader->add_action( 'init', $plugin_public, 'register_shortcodes' );
+
+		$this->loader->add_shortcode( 'projects_list', $plugin_public, 'projects_list' );
 
 	}
 
@@ -217,3 +221,5 @@ class Awpm {
 	}
 
 }
+
+
