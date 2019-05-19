@@ -8,14 +8,14 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://chuev.online
+ * @link              https://github.com/andrewchuev/awpm.git
  * @since             1.0.0
  * @package           Awpm
  *
  * @wordpress-plugin
  * Plugin Name:       AcademWeb PM
  * Plugin URI:        https://academweb.com/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Project manager & CRM for AcademWeb Solutions
  * Version:           1.0.0
  * Author:            Andrew A. Chuev
  * Author URI:        https://chuev.online
