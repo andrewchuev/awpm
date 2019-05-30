@@ -16,7 +16,7 @@
  * Plugin Name:       AcademWeb PM
  * Plugin URI:        https://academweb.com/
  * Description:       Project manager & CRM for AcademWeb Solutions
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Andrew A. Chuev
  * Author URI:        https://chuev.online
  * License:           GPL-2.0+

@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://chuev.com
+ * @link       https://github.com/andrewchuev/
  * @since      1.0.0
  *
  * @package    Awpm

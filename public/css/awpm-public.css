@@ -1,4 +1,90 @@
-/**
- * All of the CSS for your public-facing functionality should be
- * included in this file.
- */
+#colophon, .entry-footer, .entry-header {
+    display: none;
+}
+
+#page {
+    padding: 5px;
+}
+
+
+#projects_list {
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+#project_inputs {
+    font-size: 0.8rem;
+}
+
+
+#projects_list tr, #projects_list td, #projects_list th {
+    border: 1px solid #cccccc;
+    font-size: 0.8rem;
+}
+
+#projects_list td {
+    padding: 3px;
+}
+
+#projects_list th {
+    padding: 5px;
+}
+
+#projects_list th:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#projects_list .project_title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#project_inputs {
+    display: none;
+    border: 1px solid #ccc;
+    width: 320px;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    background-color: #fff9c0;
+    z-index: 2;
+}
+
+#project_inputs div {
+    margin: 10px 0;
+}
+
+#project_inputs input, #project_inputs select, #project_inputs textarea {
+    width: 300px;
+}
+
+#projects_list tr:nth-child(2n) {
+    background-color: #f0f0f0;
+}
+
+#projects_list .project:hover {
+    background-color: rgba(18, 127, 255, 0.97);
+    cursor: pointer;
+}
+
+#add_project {
+    width: 300px;
+    cursor: pointer;
+}
+
+#add_project_wrap, #edit_project_wrap {
+    width: 300px;
+    text-align: center;
+}
+
+#edit_project_wrap {
+    display: none;
+}
+
+#save_project, .cancel_project, #delete_project {
+    cursor: pointer;
+    width: auto;
+}
+
+

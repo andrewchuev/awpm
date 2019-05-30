@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://chuev.com
+ * @link       https://github.com/andrewchuev/
  * @since      1.0.0
  *
  * @package    Awpm
@@ -175,6 +175,14 @@ class Awpm {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 		$this->loader->add_action( 'init', $plugin_public, 'register_shortcodes' );
+		$this->loader->add_action( 'wp_head', $plugin_public, 'awpm_ajaxurl' );
+		$this->loader->add_action( 'wp_ajax_get_projects', $plugin_public, 'get_projects' );
+		$this->loader->add_action( 'wp_ajax_add_project', $plugin_public, 'add_project' );
+		$this->loader->add_action( 'wp_ajax_save_project', $plugin_public, 'save_project' );
+		$this->loader->add_action( 'wp_ajax_delete_project', $plugin_public, 'delete_project' );
+
+
+
 
 		$this->loader->add_shortcode( 'projects_list', $plugin_public, 'projects_list' );
 

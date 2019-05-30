@@ -5,7 +5,7 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://chuev.com
+ * @link       https://github.com/andrewchuev/
  * @since      1.0.0
  *
  * @package    Awpm

@@ -6,7 +6,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://chuev.com
+ * @link       https://github.com/andrewchuev/
  * @since      1.0.0
  *
  * @package    Awpm
