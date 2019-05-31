@@ -177,6 +177,7 @@ class Awpm {
 		$this->loader->add_action( 'init', $plugin_public, 'register_shortcodes' );
 		$this->loader->add_action( 'wp_head', $plugin_public, 'awpm_ajaxurl' );
 		$this->loader->add_action( 'wp_ajax_get_projects', $plugin_public, 'get_projects' );
+		$this->loader->add_action( 'wp_ajax_nopriv_get_projects', $plugin_public, 'get_projects' );
 		$this->loader->add_action( 'wp_ajax_add_project', $plugin_public, 'add_project' );
 		$this->loader->add_action( 'wp_ajax_save_project', $plugin_public, 'save_project' );
 		$this->loader->add_action( 'wp_ajax_delete_project', $plugin_public, 'delete_project' );

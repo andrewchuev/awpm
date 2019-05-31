@@ -1,6 +1,10 @@
 jQuery(document).ready(function ($) {
 	'use strict';
 
+	$("#deadline").flatpickr({
+		dateFormat: "d.m.Y"
+	});
+
 	$('#project_manager').select2({ placeholder: 'Project manager' }).val('').trigger('change');
 	$('#profile').select2({ placeholder: 'Profile' }).val('').trigger('change');
 	$('#country').select2({ placeholder: 'Country' }).val('').trigger('change');
@@ -76,6 +80,7 @@ jQuery(document).ready(function ($) {
 				var response = $.parseJSON(response);
 				var project, developers, devids;
 				var th = '<tr>' +
+					'<th data-order="">#</th>' +
 					'<th data-order="project_title">Title</th>' +
 					'<th data-order="project_manager">PM</th>' +
 					'<th data-order="profile_id">Profile</th>' +
@@ -90,15 +95,18 @@ jQuery(document).ready(function ($) {
 					'</tr>';
 				$('#projects_list').empty();
 				$('#projects_list').append(th);
+				var i = 1;
+				var colors = [ 'red', 'yellow', 'blue', 'green', 'gray', 'white' ];
 				response.forEach(function (entry) {
 					developers = entry.devs_names;
 					project = '<tr class="project" data-id="' + entry.project_id + '">' +
+						'<td class="npp" >' + i + '</td>' +
 						'<td class="project_title" >' + entry.project_title + '</td>' +
 						'<td>' + entry.project_manager + '</td>' +
 						'<td>' + entry.profile_name + '</td>' +
 						'<td>' + entry.country + '</td>' +
 						'<td>' + developers + '</td>' +
-						'<td style="background-color: '+ entry.priority_color +'"></td>' +
+						'<td style="background-color: '+ colors[entry.priority_color] +'"></td>' +
 						'<td>' + entry.deadline + '</td>' +
 						'<td>' + entry.project_type + '</td>' +
 						'<td>' + entry.cost + '</td>' +
@@ -106,6 +114,7 @@ jQuery(document).ready(function ($) {
 						'<td>' + entry.notes + '</td>' +
 						'</tr>';
 					$('#projects_list').append(project);
+					i++;
 				});
 			}
 		});
@@ -115,6 +124,7 @@ jQuery(document).ready(function ($) {
 
 	$('#projects_list').on('click', '.project', function () {
 		var project_id = $(this).data('id');
+
 		$.ajax({
 			url: ajaxurl,
 			type: "POST",
@@ -144,6 +154,7 @@ jQuery(document).ready(function ($) {
 
 	$('#projects_list').on('click', 'th', function () {
 		var order = $(this).data('order');
+		if ( order == '' ) return false;
 		console.log(order);
 		get_projects( order );
 	});

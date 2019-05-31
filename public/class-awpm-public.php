@@ -76,6 +76,7 @@ class Awpm_Public {
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/awpm-public.css', array(), $this->version, 'all' );
 		wp_enqueue_style( 'select2-css', plugin_dir_url( __FILE__ ) . 'css/select2.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'flatpickr-css', plugin_dir_url( __FILE__ ) . 'css/flatpickr.css', array(), $this->version, 'all' );
 
 
 	}
@@ -101,6 +102,7 @@ class Awpm_Public {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/awpm-public.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( 'select2-js', plugin_dir_url( __FILE__ ) . 'js/select2.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'flatpickr-js', plugin_dir_url( __FILE__ ) . 'js/flatpickr.js', array( 'jquery' ), $this->version, false );
 
 
 	}
@@ -195,7 +197,9 @@ class Awpm_Public {
 		if (!empty($_POST['order'])) {
 			$order = $_POST['order'];
 			$orderby = " order by $order";
-		}
+		} else {
+			$orderby = " order by priority_color";
+        }
 
 	    global $wpdb;
 		$sql      = "select * from wp_awpm_projects_view $where $orderby";
@@ -302,9 +306,11 @@ class Awpm_Public {
 	}
 
 	public static function priority_list() {
-		$colors = array( 'red', 'green', 'blue', 'yellow', 'gray' );
+		$colors = array( 'red', 'yellow', 'blue', 'green', 'gray', 'white' );
+
 		foreach ( $colors as $key => $value ) {
-			echo "<option value='$value' style='background-color: $value'>$value</option>";
+			echo "<option value='$key' style='background-color: $value'>$value</option>";
+
 		}
 	}
 
