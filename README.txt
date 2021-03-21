@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== AW Project Manager ===
 Contributors: (this should be a list of wordpress.org userid's)
 Tags: CRM, project manager
 Requires at least: 3.0.1
